@@ -32,6 +32,9 @@ df['qtd_filhos'] = df['qtd_filhos'].astype('str')
 st.title('Dados Originais!')
 st.dataframe(data=df)
 
+st.title('Métrica')
+st.metric('Média de idade', df['idade'].mean(), 12)
+
 # "with" notation
 with st.sidebar:
     sexo = st.selectbox('Sexo', df['sexo'].unique())
