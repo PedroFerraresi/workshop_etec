@@ -36,11 +36,15 @@ with st.sidebar:
     sexo = st.selectbox('Sexo', df['sexo'].unique())
     obeso = st.selectbox('Obeso', df['obeso'].unique())
     idade = st.slider('Idade', min_value=int(df['idade'].min()), max_value=int(df['idade'].max()), value=int(df['idade'].mean()), step=1)
+    fumante = st.selectbox('Fumante', df['fumante'].unique())
+    
+  
     
 # Filtro de Linhas
 conditions = (
     (df['sexo'] == sexo) &
     (df['obeso'] == obeso) & 
+    (df['fumante'] == fumante) & 
     (df['idade'] >= idade) 
 )
 
